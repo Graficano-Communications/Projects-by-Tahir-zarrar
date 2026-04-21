@@ -1,0 +1,42 @@
+<?php $__env->startSection('content'); ?>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+        	<nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="<?php echo e(route('dashboard')); ?>">Home</a></li>
+                    <li class="breadcrumb-item"><a href="<?php echo e(route('our-departments.index')); ?>">Departments</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Create</li>
+                </ol>
+            </nav>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form action="<?php echo e(route('our-departments.store')); ?>" method="post" enctype="multipart/form-data">
+                        <?php echo csrf_field(); ?>
+                        
+                        <div class="form-group">
+                            <label for="name">Department Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required placeholder="Enter department name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter description"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="images">Department Images</label>
+                            <input type="file" class="form-control-file" name="images[]" id="images" multiple>
+                            <small class="text-muted">You can select multiple images</small>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+       </div>
+    </div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

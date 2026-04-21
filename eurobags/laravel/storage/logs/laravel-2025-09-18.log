@@ -1,0 +1,62 @@
+[2025-09-18 05:23:33] local.ERROR: Uncaught Error: Call to undefined method App\Http\Kernel::getRouteMiddleware() in Command line code:1
+Stack trace:
+#0 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Uncaught Error: Call to undefined method App\\Http\\Kernel::getRouteMiddleware() in Command line code:1
+Stack trace:
+#0 {main}
+  thrown at Command line code:1)
+[stacktrace]
+#0 {main}
+"} 
+[2025-09-18 05:23:33] local.ERROR: Class 'CreateCarsTable' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'CreateCarsTable' not found at D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php:419)
+[stacktrace]
+#0 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(169): Illuminate\\Database\\Migrations\\Migrator->resolve('2025_09_17_0827...')
+#1 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(147): Illuminate\\Database\\Migrations\\Migrator->runUp('D:\\\\Graficano\\\\Eu...', 3, false)
+#2 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(96): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#3 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(71): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#4 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#5 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(29): call_user_func_array(Array, Array)
+#6 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#7 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#8 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(572): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#9 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(183): Illuminate\\Container\\Container->call(Array)
+#10 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\symfony\\console\\Command\\Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#11 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#12 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\symfony\\console\\Application.php(1012): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\symfony\\console\\Application.php(272): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\symfony\\console\\Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 D:\\Graficano\\Euro Bags\\euro-bag\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 {main}
+"} 
+[2025-09-18 05:26:53] local.ERROR: Method Illuminate\Database\Schema\Blueprint::id does not exist. {"exception":"[object] (BadMethodCallException(code: 0): Method Illuminate\\Database\\Schema\\Blueprint::id does not exist. at D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\Macroable.php:100)
+[stacktrace]
+#0 D:\\Graficano\\Euro Bags\\euro-bag\\database\\migrations\\2025_09_18_052557_create_cars_table.php(17): Illuminate\\Database\\Schema\\Blueprint->__call('id', Array)
+#1 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(164): CreateCarsTable->{closure}(Object(Illuminate\\Database\\Schema\\Blueprint))
+#2 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\helpers.php(1027): Illuminate\\Database\\Schema\\Builder->Illuminate\\Database\\Schema\\{closure}(Object(Illuminate\\Database\\Schema\\Blueprint))
+#3 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(165): tap(Object(Illuminate\\Database\\Schema\\Blueprint), Object(Closure))
+#4 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(237): Illuminate\\Database\\Schema\\Builder->create('cars', Object(Closure))
+#5 D:\\Graficano\\Euro Bags\\euro-bag\\database\\migrations\\2025_09_18_052557_create_cars_table.php(43): Illuminate\\Support\\Facades\\Facade::__callStatic('create', Array)
+#6 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(360): CreateCarsTable->up()
+#7 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(367): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#8 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(178): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(CreateCarsTable), 'up')
+#9 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(147): Illuminate\\Database\\Migrations\\Migrator->runUp('D:\\\\Graficano\\\\Eu...', 3, false)
+#10 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(96): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#11 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(71): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#12 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#13 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(29): call_user_func_array(Array, Array)
+#14 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#15 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#16 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(572): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#17 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(183): Illuminate\\Container\\Container->call(Array)
+#18 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\symfony\\console\\Command\\Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#19 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#20 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\symfony\\console\\Application.php(1012): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#21 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\symfony\\console\\Application.php(272): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#22 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\symfony\\console\\Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 D:\\Graficano\\Euro Bags\\euro-bag\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 D:\\Graficano\\Euro Bags\\euro-bag\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 {main}
+"} 

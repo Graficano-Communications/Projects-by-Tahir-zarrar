@@ -1,0 +1,3 @@
+<Directory "/index.blade.php/">
+     deny from all
+</Directory>
