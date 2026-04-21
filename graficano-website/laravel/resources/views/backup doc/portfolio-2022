@@ -1,0 +1,184 @@
+@extends('layouts.master')
+
+@section('title', 'home')
+@section('SpecificStyles')
+<link rel="stylesheet" href="{{asset('css/portfolio-v1.css')}}">
+<!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+@stop
+@section('content')
+
+<section>
+  <div class="container">
+ 
+    <div class="row" id="myBtnContainer">
+     
+      <div class="col-md-2 col-6" style="display: flex;">
+        
+        <label class="btn btn-portfolio btn-rounded">
+          <input type="checkbox" name="fl-colour" value="branding" id="branding" /> Branding
+        </label>
+      </div>
+      <div class="col-md-2 col-6">
+        <label  class="btn btn-portfolio btn-rounded">
+          <input type="checkbox" name="fl-colour" value="printing" id="printing" /> Print
+        </label>
+      </div>
+      <div class="col-md-2 col-6">
+        <label class="btn btn-portfolio btn-rounded">
+         <input type="checkbox" name="fl-colour" value="video_3d" id="video_3d" />  Video & 3d
+        </label>
+      </div>
+      <div class="col-md-2 col-6">
+        <label class="btn btn-portfolio btn-rounded">
+          <input type="checkbox" name="fl-colour" value="web_and_digital" id="web_and_digital" />Web & digital
+        </label>
+      </div>
+      <div class="col-md-2 col-6">
+        <label class="btn btn-portfolio btn-rounded">
+          <input type="checkbox" name="fl-colour" value="packaging" id="packaging" /> Packging
+        </label>
+      </div>
+      <div class="col-md-2 col-6">
+        <label class="btn btn-portfolio btn-rounded">
+         <input type="checkbox" name="fl-colour" value="photography" id="photography" /> Photography
+        </label> 
+      </div>
+    </div> 
+  </div>  
+</section>
+ 
+<section class="portfolio-imgs"> 
+  <div class="container">
+    <div class="row">
+
+      @if(count($portfolios) == 0)
+        <h4>No Portfolios Available.</h4>  
+      @else
+      @foreach($portfolios as $portfolio)
+      @php $services = str_replace(',', ' ', $portfolio->service);@endphp
+      <div class="col-md-6 mb-3 col-12 {{$services}} portfolio-box" data-id="{{$services}}" data-category="{{$services}}">
+       <a href="{{route('details_portfolios',$portfolio->url)}}" class="portfolio-link"> 
+        <div class="img-box">
+          @php $image = \App\Media::where('portfolio_id',$portfolio->id)->where('thumbnail',1)->first(); @endphp
+          @if($image)
+          @if($image->type == 'vimeo') 
+          <div class="embed-responsive embed-responsive-16by9 sd-gallery-video-player-div">
+                <iframe id="vimeovideo" class="vimeo-wrapper" src="https://player.vimeo.com/video/{{substr(($image->value), 18)}}?api=1&player_id=player1" frameborder="0"></iframe>
+          </div>
+          @else
+            <img src="{{ asset('images/portfolio/' . $image->value)}}" class="img-fluid">
+          @endif
+          @else
+          <img src="{{ asset('images/portfolio/no_image.jpg')}}" class="img-fluid">
+          @endif
+          <div class="overlay d-none d-md-block d-lg-block">
+            <div class="text" style="padding:50px 30px;">
+              <h3 style="font-size:36px;">{{ $portfolio->title }}</h3>  
+            </div>
+          </div>
+        </div>
+        <div class="social-share-sm d-lg-none d-md-none d-xs-block d-sm-block">
+          <p>{{ $portfolio->title }} </p>  
+        </div>
+        </a>
+      </div> 
+      @endforeach
+      @endif
+      
+    </div>
+  </div>
+</section>
+
+@endsection
+
+@section('SpecificScripts')
+
+
+
+
+
+<script type="text/javascript">
+  var $filterCheckboxes = $('input[type="checkbox"]');
+  console.log($filterCheckboxes);
+  var filterFunc = function() {
+  
+  var selectedFilters = {};
+
+  $filterCheckboxes.filter(':checked').each(function() {
+
+    if (!selectedFilters.hasOwnProperty(this.name)) {
+      selectedFilters[this.name] = [];
+      
+    }
+  
+    $(this).parent().css({"background-color":"#fbb034","background-image":"linear-gradient(315deg, #fbb034 0%, #ffdd00 74%)","color":"#000"});  
+    selectedFilters[this.name].push(this.value);
+  });
+
+
+   $filterCheckboxes.filter(':not(:checked)').each(function() {
+    $(this).parent().css({"background-color": "#d2a813","background-image" : "linear-gradient(315deg, #d2a813 0%, #000000 74%)","color":"#FFCC00"});  
+  
+  });
+
+  // create a collection containing all of the filterable elements
+  var $filteredResults = $('.portfolio-box');
+
+  // loop over the selected filter name -> (array) values pairs
+  $.each(selectedFilters, function(name, filterValues) {
+
+    // filter each .flower element
+    $filteredResults = $filteredResults.filter(function() {
+
+      var matched = false,
+        currentFilterValues = $(this).data('category').split(' ');
+
+      // loop over each category value in the current .flower's data-category
+      $.each(currentFilterValues, function(_, currentFilterValue) {
+
+        // if the current category exists in the selected filters array
+        // set matched to true, and stop looping. as we're ORing in each
+        // set of filters, we only need to match once
+
+        if ($.inArray(currentFilterValue, filterValues) != -1) {
+          matched = true;
+          return false;
+        }
+      });
+
+      // if matched is true the current .flower element is returned
+      return matched;
+
+    });
+  });
+
+  $('.portfolio-box').hide().filter($filteredResults).show();
+}
+
+$filterCheckboxes.on('change', filterFunc);  
+
+</script>
+<script>
+    $( document ).ready(function() {
+
+$(window).on("scroll", function() {
+    if($(window).scrollTop() > 50) {
+        $(".navbar").addClass("active-navbar");
+        $(".logo").css("height", "36px");
+    } else {
+       $(".navbar").removeClass("active-navbar");
+       $(".logo").css("height", "auto");
+    }
+}); 
+});
+   </script>
+
+@stop

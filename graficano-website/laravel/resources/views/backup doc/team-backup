@@ -1,0 +1,84 @@
+@extends('layouts.master')
+
+@section('title', 'home')
+@section('SpecificStyles')
+<link rel="stylesheet" href="{{asset('css/team.css')}}">
+@stop
+
+@section('content')
+<!-- Main banner -->
+<section class="main-banner"> 
+  <img src="{{asset('assets/images/website-team.jpg')}}" alt="" class="img-fluid">
+</section>
+<!-- /.Main banner  -->
+
+<!-- Departments Section  -->
+<section class="departments-section">
+  <h1 class="text-center dept-heading">Departments</h1>   
+    <div class="timeline d-none d-md-block">
+      <div class="timeline-v"><hr class="dept-hr left-hr"></div>
+      <div class="timeline-w"><hr class="dept-hr right-hr"></div>
+    </div>
+
+    <div class="container timeline-info">
+      <div class="row">
+        <div class="col-md-4">
+          <h4 class="text-center">MULTIMEDIA</h4>
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            t is a long established fact that a reader will be distracted use Lorem Ipsum as their default model text, and a search sometimes by accident, sometimes on purpose (injected d  </p>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-center">WeB & DiGITAL MEDIA</h4>
+          <p>
+            Our web and the digital team having distinction in Advanced Marketing, and web development. We have executed many projects in the digital genre. We guarantee to deliver clients' websites the correct direction and making associations between our client and its target gathering of people that completely comes about in awesome incomes. Giving development and digital marketing services and attain client’s fulfillment is our victory and that's an incredible feeling.
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-center">DESIGN & ILLUSTRATION</h4>
+          <p>
+            We have core experience and ability within the design department. We have begun with straightforward thoughts and developed beneficial businesses. Our thought to succeed in this industry is to "go with the flow" which suggests having a continuously learning process about new things. It’s an honor to say that our group has a bounty of knowledge into a brief period within the industry. Now we as a design team lie on the top rank agencies to supply the benefit of the next level.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+</section>
+<section class="box-methods">
+  <div class="container">
+    <h1 class="dept-heading text-center">Work Methodology</h1>
+    <div class="circle-flex">
+      <div class="circle-1 rounded-circle"><h5>PITCH</h5></div>
+      <img src="{{asset('assets/images/arrow-lg.png')}}" class="img-fluid">
+      
+      <div class="circle-2 rounded-circle"><h5>PRESENT</h5></div>
+      <img src="{{asset('assets/images/arrow-lg.png')}}" class="img-fluid">
+
+      <div class="circle-3 rounded-circle"><h5>ASSESSMENT</h5></div>
+      <img src="{{asset('assets/images/arrow-lg.png')}}" class="img-fluid ">
+
+      <div class="circle-4 rounded-circle"><h5>CREATIVE</h5></div>
+      <img src="{{asset('assets/images/arrow-lg.png')}}" class="img-fluid">
+
+      <div class="circle-4 rounded-circle"><h5>ROLLOUT</h5></div>
+    </div>
+  </div>
+</section>
+
+<!-- /.Departments Section  -->
+@endsection
+@section('SpecificScripts')
+<script>
+    $( document ).ready(function() {
+
+$(window).on("scroll", function() {
+    if($(window).scrollTop() > 50) {
+        $(".navbar").addClass("active-navbar");
+        $(".logo").css("height", "36px");
+    } else {
+       $(".navbar").removeClass("active-navbar");
+       $(".logo").css("height", "auto");
+    }
+}); 
+});
+</script>
+@stop

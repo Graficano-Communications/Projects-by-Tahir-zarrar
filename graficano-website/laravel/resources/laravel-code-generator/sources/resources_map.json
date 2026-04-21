@@ -1,0 +1,22 @@
+[
+    {
+        "model-name": "Portfolio",
+        "resource-file": "portfolios.json",
+        "table-name": "portfolios"
+    },
+    {
+        "model-name": "Media",
+        "resource-file": "media.json",
+        "table-name": "media"
+    },
+    {
+        "model-name": "Blog",
+        "resource-file": "blogs.json",
+        "table-name": "blogs"
+    },
+    {
+        "model-name": "Service",
+        "resource-file": "services.json",
+        "table-name": "services"
+    }
+]

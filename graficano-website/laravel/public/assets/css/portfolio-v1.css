@@ -1,0 +1,172 @@
+.navbar-light{
+    position: relative;
+}
+section{
+    padding: 0px;
+}
+.portfolio-box-main{
+  margin-top: 10px;
+}
+.portfolio-box{
+    margin-top: 10px;
+}
+.btn-portfolio{
+    width: 180.64px;
+    height: 46.19px;
+    /* background: #FFCC00;  */
+    box-sizing: border-box;
+    border-radius: 80px;
+    padding:16px;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #fbb034;
+    background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);
+}
+.active{
+    /* background: #FFCC00 !important; */
+    background-color: #d2a813;
+    background-image: linear-gradient(315deg, #d2a813 0%, #000000 74%);
+    color:#FFCC00;
+}
+#myBtnContainer input[type=checkbox]{
+ display: none;
+}
+input[type=checkbox]:checked + label {
+  /* background: #FFCC00 !important; */
+  background-color: #d2a813;
+background-image: linear-gradient(315deg, #d2a813 0%, #000000 74%);
+color:#FFCC00;
+
+}
+.show {
+  display: block;
+}
+.portfolio-link{
+  color: black;
+}
+.portfolio-link:hover{
+  cursor: pointer;
+  color: black;
+}
+.portfolio-imgs{
+    margin-top: 10px;
+}
+.portfolio-imgs .col-md-3{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.portfolio-imgs .col-md-4{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+/* Overlay Effect */
+.img-box {
+    position: relative;
+    width: 100%;
+}
+  
+  .overlay {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    opacity: 0.85;
+    overflow: hidden;
+    width: 100%;
+    height:0;
+    transition: .5s ease;
+  }
+  
+.img-box:hover .overlay {
+    bottom: 30%;
+    height: 70%;
+  }
+  
+  .text {
+      padding: 30px 40px;
+    /* color: black;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center; */
+  }
+  .text p{
+    font-size: 14px;
+    line-height: 21px; 
+    padding-right:0px;
+    text-align: center;   
+  }
+  .text h3{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 91.18%;
+    text-align: center;
+    letter-spacing: -0.025em;
+  }
+  .logo-sm{
+      opacity: 1;
+      /* margin-bottom: -20px; */
+      position: relative;
+      z-index: 999;
+  }
+  .social-share{
+      /* margin-top: -20px; */
+  }
+  .social-share span{
+      font-size: 12px;
+  }
+ .social-share-sm{
+     padding-top: 5px;
+ }
+  .social-share-sm h5{
+    font-size: 8px;
+    line-height: 12px;
+  }
+  .social-share-sm img{
+      height: 10px;
+  }
+
+  /* -------------------Portfolio large page styles */
+
+  .Portfolio-box-lg{
+    padding: 60px 0px;
+  }
+  .btn-back{
+      top: 200px;
+      left: 80px;
+      border: none;
+      color: black;
+      background: transparent;
+      position: fixed;
+      padding: 10px 6px;
+      bottom: 600px;
+
+  }
+  td{
+     padding-top: 5px !important;
+     padding-bottom: 5px !important;
+ }
+  .bold{
+    width: 132px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.005em;
+  }
+.portfolio-detail h4{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 29px;
+    letter-spacing: -0.005em;
+    text-transform: uppercase;
+}
+  
