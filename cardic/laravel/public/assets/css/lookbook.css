@@ -1,0 +1,135 @@
+/*=====================
+    17.1.lookbook CSS start
+==========================*/
+.lookbook .lookbook-block {
+	position: relative; }
+	.lookbook .lookbook-block .lookbook-dot {
+	  cursor: pointer;
+	  position: absolute;
+	  z-index: 2;
+	  width: 29px;
+	  height: 29px;
+	  line-height: 29px;
+	  border-radius: 50%;
+	  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	  -webkit-transition: all 0.3s ease;
+	  transition: all 0.3s ease;
+	  top: 50%;
+	  left: 12%;
+	  background-color: #ffffff; }
+	  .lookbook .lookbook-block .lookbook-dot.dot2 {
+		top: 70%;
+		left: 27%; }
+	  .lookbook .lookbook-block .lookbook-dot.dot3 {
+		top: 28%;
+		left: 30%; }
+	  .lookbook .lookbook-block .lookbook-dot.dot4 {
+		top: 67%;
+		left: 8%; }
+	  .lookbook .lookbook-block .lookbook-dot.dot5 {
+		top: 40%;
+		left: 35%; }
+	  .lookbook .lookbook-block .lookbook-dot.dot6 {
+		top: 80%;
+		left: 58%; }
+	  .lookbook .lookbook-block .lookbook-dot.dot7 {
+		top: 67%;
+		left: 45%; }
+	  .lookbook .lookbook-block .lookbook-dot.dot8 {
+		top: 43%;
+		left: 39%; }
+	  .lookbook .lookbook-block .lookbook-dot.dot9 {
+		top: 32%;
+		left: 50%; }
+	  .lookbook .lookbook-block .lookbook-dot.dot10 {
+		top: 60%;
+		left: 50%; }
+	  .lookbook .lookbook-block .lookbook-dot.dot11 {
+		top: 50%;
+		left: 45%; }
+	  .lookbook .lookbook-block .lookbook-dot.dot12 {
+		top: 75%;
+		left: 45%; }
+	  .lookbook .lookbook-block .lookbook-dot.dot13 {
+		top: 40%;
+		left: 45%; }
+	  .lookbook .lookbook-block .lookbook-dot.dot14 {
+		top: 76%;
+		left: 45%; }
+	  .lookbook .lookbook-block .lookbook-dot.dot15 {
+		top: 50%;
+		left: 15%; }
+	  .lookbook .lookbook-block .lookbook-dot:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		content: "";
+		background-color: #fff;
+		background-color: rgba(255, 255, 255, 0.5);
+		zoom: 1;
+		background-color: transparent\9;
+		z-index: -1;
+		border-radius: 50%;
+		-webkit-transition: all 0.3s ease;
+		transition: all 0.3s ease; }
+	  .lookbook .lookbook-block .lookbook-dot span {
+		text-align: center;
+		-webkit-box-pack: center;
+			-ms-flex-pack: center;
+				justify-content: center;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex; }
+	  .lookbook .lookbook-block .lookbook-dot .dot-showbox {
+		visibility: hidden;
+		top: -98px;
+		left: 150%;
+		position: absolute;
+		width: 130px;
+		background-color: #ffffff;
+		-webkit-box-shadow: -3px -3px 13px rgba(48, 54, 61, 0.1);
+		box-shadow: -3px -3px 13px rgba(48, 54, 61, 0.1); }
+		.lookbook .lookbook-block .lookbook-dot .dot-showbox img {
+		  margin-top: 0; }
+		.lookbook .lookbook-block .lookbook-dot .dot-showbox .dot-info {
+		  padding: 5px;
+		  text-align: center; }
+		  .lookbook .lookbook-block .lookbook-dot .dot-showbox .dot-info h5 {
+			margin-bottom: 0;
+			text-transform: capitalize;
+			line-height: 20px; }
+			.lookbook .lookbook-block .lookbook-dot .dot-showbox .dot-info h5.title {
+			  font-weight: 700; }
+		  .lookbook .lookbook-block .lookbook-dot .dot-showbox .dot-info h6 {
+			text-transform: uppercase;
+			color: var(--theme-deafult);
+			margin-bottom: 0; }
+		.lookbook .lookbook-block .lookbook-dot .dot-showbox:before {
+		  position: absolute;
+		  content: "";
+		  width: 0;
+		  height: 0;
+		  border-top: 8px solid transparent;
+		  border-right: 8px solid #ffffff;
+		  border-bottom: 8px solid transparent;
+		  top: 41%;
+		  left: -8px; }
+	  .lookbook .lookbook-block .lookbook-dot:hover {
+		background-color: var(--theme-deafult);
+		-webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+		box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+		z-index: 10; }
+		.lookbook .lookbook-block .lookbook-dot:hover .dot-showbox {
+		  -webkit-animation: fadeInUp 400ms ease-in-out;
+				  animation: fadeInUp 400ms ease-in-out;
+		  visibility: visible;
+		  -webkit-transition: all 0.5s ease;
+		  transition: all 0.5s ease; }
+		.lookbook .lookbook-block .lookbook-dot:hover span {
+		  color: #ffffff; }
+		.lookbook .lookbook-block .lookbook-dot:hover:before {
+		  -webkit-transform: scale(1.3); }
+  
