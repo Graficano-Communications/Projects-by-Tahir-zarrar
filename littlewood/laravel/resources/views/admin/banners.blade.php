@@ -1,0 +1,129 @@
+@extends('admin.layouts.master')
+@section('main-content')
+<style>
+    .btn-delete {
+        display: flex;
+        align-items: center;
+    }
+    .btn-delete i {
+        margin-right: 5px; /* Adjust the margin as needed */
+        display: flex; /* Ensure the icon is centered */
+    }
+</style>
+
+<div class="container-fluid p-0">
+    @if (session('status'))
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{ session('status') }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+
+    <h1 class="h3 mb-3"><strong>Banners</h1>
+    <div class="row text-end mb-3">
+        <div>
+            <a href="{{ url('add-banners') }}" type="button" class="btn btn-info">
+                <i data-feather="plus-circle"></i> Add New
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <table class="table table-striped table-hover my-0">
+            <thead>
+                <tr class="py-3">
+                    <th class="d-none d-xl-table-cell text-uppercase py-3">SR#</th>
+                    <th class="d-none d-xl-table-cell text-uppercase py-3">Caption</th>
+                    <th class="d-none d-md-table-cell text-uppercase py-3">Description</th>
+                    <th class="d-none d-md-table-cell text-uppercase py-3">Image</th>
+                    <th class="d-none d-md-table-cell text-uppercase text-center py-3" colspan="2">Action</th>
+                </tr>
+            </thead>
+            <tbody id="BrandSortable">
+                @foreach($banners as $banner)
+                <tr id="{{ $banner->id }}">
+                    <td class="d-none d-xl-table-cell">{{ $loop->iteration }}</td>
+                    <td class="d-none d-xl-table-cell">{{ $banner->caption }}</td>
+                    <td class="d-none d-xl-table-cell">{{ $banner->description }}</td>
+                    <td class="d-none d-md-table-cell">
+                        <img width="80px" height="40px" src="{{ asset('uploads/banners/' . $banner->image) }}" alt="{{ $banner->caption }}">
+                    </td>
+                    <td class="d-none d-md-table-cell text-end">
+                        <a href="{{ route('edit-banner', $banner->id) }}" class="btn btn-success">
+                            <i class="mb-1" data-feather="edit"></i> Edit
+                        </a>
+                    </td>
+                    <td class="d-none d-md-table-cell text-start">
+                        <form action="{{ route('delete-banner', $banner->id) }}" method="POST" onsubmit="return confirmDelete();">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">
+                                <i class="mb-1" data-feather="trash-2"></i> Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+                <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Include jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Include jQuery UI library -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    function confirmDelete() {
+        return confirm('Are you sure you want to delete this banner?');
+    }
+
+    $(document).ready(function() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $("#BrandSortable").sortable({
+            delay: 150,
+            stop: function() {
+                var selectedData = [];
+                $('#BrandSortable>tr').each(function() {
+                    var id = $(this).attr("id");
+                    console.log("Row ID:", id); // Debugging statement
+                    if (id) { // Only push non-null and non-empty IDs
+                        selectedData.push(id);
+                    }
+                });
+                updateOrder(selectedData);
+            }  
+        });
+
+        function updateOrder(data) {
+            var token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+            var ajaxurl = '{{ route('sort_banner') }}';
+            var postData = {
+                'data': data,
+                '_token': token
+            };
+            console.log("Sending data to server:", postData); // Debugging statement
+
+            $.ajax({
+                url: ajaxurl,
+                type: 'post',
+                data: postData,
+                success: function(response) {
+                    console.log("Response from server:", response); // Debugging statement
+                    if (response.success) {
+                        alert('Order successfully updated');
+                    } else {
+                        alert('Failed to update order');
+                    }
+                }
+            });
+        }
+    });
+</script>
+@endsection
